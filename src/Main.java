@@ -29,14 +29,12 @@ public class Main {
     public static void task2() {
         System.out.println("Задача 2");
         int[] monthlyExpenses = generateRandomArray();
-        int maxExpenses = 0;
-        int minExpenses = 222000;
+        int maxExpenses = monthlyExpenses[0];
+        int minExpenses = monthlyExpenses[0];
         for (int monthlyExpens : monthlyExpenses) {
             if (monthlyExpens > maxExpenses) {
                 maxExpenses = monthlyExpens;
             }
-        }
-        for (int monthlyExpens : monthlyExpenses) {
             if (monthlyExpens < minExpenses) {
                 minExpenses = monthlyExpens;
             }
@@ -49,7 +47,7 @@ public class Main {
         int[] monthlyExpenses = generateRandomArray();
         var averageCost = 0;
         for (int totalExpenses : monthlyExpenses) {
-            averageCost += totalExpenses / 30;
+            averageCost += totalExpenses / monthlyExpenses.length;
         }
         System.out.println("Средняя сумма трат за месяц составила " + averageCost + " рублей");
     }
